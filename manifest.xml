@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE plugin SYSTEM "manifest.dtd">
+<plugin version="2">
+	<info>
+		<version>1.0</version>
+		<name>dontclickme</name>
+		<title>Don't click me</title>
+		<author>Martijn Alberts</author>
+		<description>Do not click this button!</description>
+	</info>
+	<config>
+		<configfile>config.php</configfile>
+	</config>
+	<components>
+		<component>
+			<files>
+				<server>
+					<serverfile>php/plugin.dontclickme.php</serverfile>
+				</server>
+				<client>
+					<clientfile load="release">js/dontclickme.js</clientfile>
+					<clientfile load="debug">js/dontclickme.js</clientfile>
+					<clientfile load="source">js/dontclickme.js</clientfile>
+				</client>
+				<resources>
+					<resourcefile load="release">css/dontclickme.css</resourcefile>
+				</resources>
+			</files>
+		</component>
+	</components>
+</plugin>

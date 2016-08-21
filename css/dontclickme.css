@@ -1,0 +1,17 @@
+/* Don't click me */ 
+
+body.dontclickme {
+   -webkit-transform: rotate(180deg);
+}
+
+.icon_dont_click_me {
+ background-image: url(../img/warning.png);
+ background-size: 50%;
+ background-color:  #0f70bd !important;
+ border:none !important;
+ opacity: 1.0 !important;
+ 
+}
+
+
+
