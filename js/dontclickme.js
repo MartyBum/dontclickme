@@ -4,13 +4,13 @@ Ext.namespace('Zarafa.plugins.dontclickme');
  * @class Zarafa.plugins.dontclickme.DontClickMePlugin
  * @extends Zarafa.core.ThemePlugin
  *
- */ 
+ */
 Zarafa.plugins.dontclickme.DontClickMePlugin  = Ext.extend(Zarafa.core.Plugin, {
-     
+	rotateElementIds : ['zarafa-mainmenu', 'zarafa-maintoolbar', 'zarafa-navigationpanel', 'zarafa-mainpanel-content', 'zarafa-main-content-mail-preview'],
 
     initPlugin : function() {
 
-    this.registerInsertionPoint('main.maintabbar.right', this.createToolBarButton, this);    
+    this.registerInsertionPoint('main.maintabbar.right', this.createToolBarButton, this);
 
     },
 
@@ -22,23 +22,33 @@ Zarafa.plugins.dontclickme.DontClickMePlugin  = Ext.extend(Zarafa.core.Plugin, {
      */
      createToolBarButton: function () {
      	return {
-        newMenuIndex: 10,
-        xtype: 'button',
-        scale: 'large',
-        listeners: {
-        	click: function() {
-                document.body.className = "dontclickme";
-		container.getNavigationBar().el.addClass('dontclickme');
-                }
-        },
-        tooltip: _("Don't click me"),
-        iconCls: 'icon_dont_click_me',
-	tabOrderIndex: 4,
-	cls: 'dontclickme',
-        scope: this
+	        newMenuIndex: 10,
+	        xtype: 'button',
+	        scale: 'large',
+	        listeners: {
+	        	click: function() {
+	        		if ( Math.random()<0.5 ){
+	        			Ext.getBody().toggleClass("dontclickme");
+	        		}
+					Ext.each(this.rotateElementIds, function(id){
+		        		if ( Math.random()<0.5 ){
+		        			var el = Ext.get(id);
+							if ( el ){
+								el.toggleClass("dontclickme");
+							}
+						}
+					});
+	           },
+	           scope: this
+	        },
+	        tooltip: _("Don't click me"),
+	        iconCls: 'icon_dont_click_me',
+			tabOrderIndex: 4,
+			cls: 'dontclickme',
+	        scope: this
         };
-     },	 
-	
+     },
+
 });
 
 
