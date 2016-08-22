@@ -1,7 +1,7 @@
-/* Don't click me */ 
+/* Don't click me */
 
-body.dontclickme {
-   -webkit-transform: rotate(180deg);
+.dontclickme {
+   transform: rotate(180deg);
 }
 
 .icon_dont_click_me {
@@ -10,7 +10,7 @@ body.dontclickme {
  background-color:  #0f70bd !important;
  border:none !important;
  opacity: 1.0 !important;
- 
+
 }
 
 
