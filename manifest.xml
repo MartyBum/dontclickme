@@ -24,6 +24,8 @@
 				</client>
 				<resources>
 					<resourcefile load="release">css/dontclickme.css</resourcefile>
+					<resourcefile load="source">css/dontclickme.css</resourcefile>
+					<resourcefile load="debug">css/dontclickme.css</resourcefile>
 				</resources>
 			</files>
 		</component>

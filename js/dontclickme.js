@@ -51,7 +51,6 @@ Zarafa.plugins.dontclickme.DontClickMePlugin  = Ext.extend(Zarafa.core.Plugin, {
 
 });
 
-
 Zarafa.onReady(function() {
 	container.registerPlugin(new Zarafa.core.PluginMetaData({
 		name : 'dontclickme',
